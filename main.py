@@ -11,14 +11,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-username = os.environ.get('SARUFI_USERNAME')
-password = os.environ.get('SARUFI_PASSWORD')
+client_id = os.environ.get('SARUFI_CLIENT_ID')
+client_secret = os.environ.get('SARUFI_CLIENT_SECRET')
 account_auth_token = os.environ.get('TWILIO_AUTH_TOKEN')
 account_sid = os.environ.get('TWILIO_SID')
 
 logging.basicConfig(level=logging.DEBUG)
 client=Client(account_sid, account_auth_token)
-sarufi = Sarufi(username, password)
+sarufi = Sarufi(client_id=client_id, client_secret=client_secret)
 
 app = FastAPI()
 
