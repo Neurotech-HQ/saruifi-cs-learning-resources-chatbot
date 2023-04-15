@@ -4,10 +4,10 @@ import os
 
 load_dotenv()
 
-username = os.environ.get('SARUFI_USERNAME')
-password = os.environ.get('SARUFI_PASSWORD')
+client_id = os.environ.get('SARUFI_CLIENT_ID')
+client_secret = os.environ.get('SARUFI_CLEINT_SECRET')
 
-sarufi = Sarufi(username, password)
+sarufi = Sarufi(client_id=client_id, client_secret=client_secret)
 
 def update_sarufi_bot():
     updated_Nalah_bot = sarufi.update_from_file(
